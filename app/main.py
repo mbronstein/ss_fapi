@@ -72,6 +72,11 @@ app = FastAPI()
 
 
 @app.get("/test")
+def return_test() -> str:
+    return "TEST RETURNED"
+
+
+
 def get_offices(db: Session = Depends(get_db)) -> str:
     db.query()
     offices = db.query(Office).all()
